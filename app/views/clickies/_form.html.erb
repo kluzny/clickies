@@ -1,0 +1,33 @@
+<%= form_for(@clicky) do |f| %>
+  <% if @clicky.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@clicky.errors.count, "error") %> prohibited this clicky from being saved:</h2>
+
+      <ul>
+      <% @clicky.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :page_info_id %><br>
+    <%= f.text_field :page_info_id %>
+  </div>
+  <div class="field">
+    <%= f.label :clicky_id %><br>
+    <%= f.text_field :clicky_id %>
+  </div>
+  <div class="field">
+    <%= f.label :url %><br>
+    <%= f.text_field :url %>
+  </div>
+  <div class="field">
+    <%= f.label :banned_site_id %><br>
+    <%= f.text_field :banned_site_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

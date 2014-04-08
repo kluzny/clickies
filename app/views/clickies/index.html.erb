@@ -1,0 +1,33 @@
+<h1>Listing clickies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Page info</th>
+      <th>Clicky</th>
+      <th>Url</th>
+      <th>Banned site</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @clickies.each do |clicky| %>
+      <tr>
+        <td><%= clicky.page_info %></td>
+        <td><%= clicky.clicky %></td>
+        <td><%= clicky.url %></td>
+        <td><%= clicky.banned_site %></td>
+        <td><%= link_to 'Show', clicky %></td>
+        <td><%= link_to 'Edit', edit_clicky_path(clicky) %></td>
+        <td><%= link_to 'Destroy', clicky, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Clicky', new_clicky_path %>

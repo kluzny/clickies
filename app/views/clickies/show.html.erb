@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Page info:</strong>
+  <%= @clicky.page_info %>
+</p>
+
+<p>
+  <strong>Clicky:</strong>
+  <%= @clicky.clicky %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @clicky.url %>
+</p>
+
+<p>
+  <strong>Banned site:</strong>
+  <%= @clicky.banned_site %>
+</p>
+
+<%= link_to 'Edit', edit_clicky_path(@clicky) %> |
+<%= link_to 'Back', clickies_path %>
