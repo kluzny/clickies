@@ -1,6 +1,5 @@
-<h1>Editing page_info</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @page_info %> |
-<%= link_to 'Back', page_infos_path %>
+<%- model_class = PageInfo -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => PageInfo %></h1>
+</div>
+<%= render :partial => 'form' %>

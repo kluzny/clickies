@@ -1,19 +1,26 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = PageInfo -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => PageInfo %></h1>
+</div>
 
-<p>
-  <strong>Clicky:</strong>
-  <%= @page_info.clicky %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:title) %></dt>
+      <dd><pre class="prettyprint"><%= @page_info.title %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:nsfw) %></dt>
+      <dd><pre class="prettyprint"><%= @page_info.nsfw %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @page_info.title %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              page_infos_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_page_info_path(@page_info), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              page_info_path(@page_info),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Nsfw:</strong>
-  <%= @page_info.nsfw %>
-</p>
-
-<%= link_to 'Edit', edit_page_info_path(@page_info) %> |
-<%= link_to 'Back', page_infos_path %>

@@ -1,29 +1,22 @@
-<%= form_for(@page_info) do |f| %>
-  <% if @page_info.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@page_info.errors.count, "error") %> prohibited this page_info from being saved:</h2>
-
-      <ul>
-      <% @page_info.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for @page_info, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :title, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :title, :class => 'text-field form-control' %>
     </div>
-  <% end %>
+  </div>
+  <div class="form-group">
+    <%= f.label :nsfw, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.check_box :nsfw, :class => 'text-field form-control' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :clicky_id %><br>
-    <%= f.text_field :clicky_id %>
-  </div>
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :nsfw %><br>
-    <%= f.check_box :nsfw %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  page_infos_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>
