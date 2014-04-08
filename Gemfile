@@ -44,6 +44,7 @@ group :development do
   gem 'guard-rspec'
   gem 'guard-livereload'
   gem 'guard-brakeman'
+  gem 'guard-delayed'
   gem 'rb-fsevent', require: false
 end
 

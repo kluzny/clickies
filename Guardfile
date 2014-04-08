@@ -46,3 +46,7 @@ guard :rspec do
   watch(%r{^app/views/(.+)/.*\.(erb|haml|slim)$})     { |m| "spec/features/#{m[1]}_spec.rb" }
 end
 
+
+guard 'delayed', :environment => 'development' do
+  watch(%r{^app/(.+)\.rb})
+end
