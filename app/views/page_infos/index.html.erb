@@ -1,0 +1,31 @@
+<h1>Listing page_infos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Clicky</th>
+      <th>Title</th>
+      <th>Nsfw</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @page_infos.each do |page_info| %>
+      <tr>
+        <td><%= page_info.clicky %></td>
+        <td><%= page_info.title %></td>
+        <td><%= page_info.nsfw %></td>
+        <td><%= link_to 'Show', page_info %></td>
+        <td><%= link_to 'Edit', edit_page_info_path(page_info) %></td>
+        <td><%= link_to 'Destroy', page_info, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Page info', new_page_info_path %>

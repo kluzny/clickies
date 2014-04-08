@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Clicky:</strong>
+  <%= @page_info.clicky %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @page_info.title %>
+</p>
+
+<p>
+  <strong>Nsfw:</strong>
+  <%= @page_info.nsfw %>
+</p>
+
+<%= link_to 'Edit', edit_page_info_path(@page_info) %> |
+<%= link_to 'Back', page_infos_path %>

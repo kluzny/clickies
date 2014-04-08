@@ -1,4 +1,6 @@
 Clickies::Application.routes.draw do
+  resources :page_infos
+
   resources :clickies
 
   resources :banned_sites

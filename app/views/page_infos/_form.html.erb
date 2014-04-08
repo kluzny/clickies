@@ -1,0 +1,29 @@
+<%= form_for(@page_info) do |f| %>
+  <% if @page_info.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@page_info.errors.count, "error") %> prohibited this page_info from being saved:</h2>
+
+      <ul>
+      <% @page_info.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :clicky_id %><br>
+    <%= f.text_field :clicky_id %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :nsfw %><br>
+    <%= f.check_box :nsfw %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
