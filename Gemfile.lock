@@ -107,7 +107,6 @@ GEM
       execjs
     coffee-script-source (1.7.0)
     columnize (0.3.6)
-    daemons (1.1.9)
     database_cleaner (1.2.0)
     debug_inspector (0.0.2)
     debugger (1.6.6)
@@ -170,10 +169,6 @@ GEM
     guard-bundler (2.0.0)
       bundler (~> 1.0)
       guard (~> 2.2)
-    guard-delayed (0.2.1)
-      daemons
-      delayed_job
-      guard (> 0.3)
     guard-livereload (2.1.2)
       em-websocket (~> 0.5)
       guard (~> 2.0)
@@ -380,7 +375,6 @@ DEPENDENCIES
   guard
   guard-brakeman
   guard-bundler
-  guard-delayed
   guard-livereload
   guard-rails
   guard-rspec

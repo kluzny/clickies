@@ -47,6 +47,3 @@ guard :rspec do
 end
 
 
-guard 'delayed', :environment => 'development' do
-  watch(%r{^app/(.+)\.rb})
-end
