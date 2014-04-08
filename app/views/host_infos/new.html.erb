@@ -1,5 +1,6 @@
-<h1>New host_info</h1>
+<%- model_class = HostInfo -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => HostInfo %></h1>
+</div>
+<%= render :partial => 'form' %>
 
-<%= render 'form' %>
-
-<%= link_to 'Back', host_infos_path %>

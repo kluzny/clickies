@@ -1,49 +1,52 @@
-<%= form_for(@host_info) do |f| %>
-  <% if @host_info.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@host_info.errors.count, "error") %> prohibited this host_info from being saved:</h2>
-
-      <ul>
-      <% @host_info.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for @host_info, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :ip, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :ip, :class => 'text-field form-control' %>
     </div>
-  <% end %>
+  </div>
+  <div class="form-group">
+    <%= f.label :domain, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :domain, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :status, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :status, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :ping, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :ping, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :blacklisted, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.check_box :blacklisted, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :blacklisted_on, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.datetime_select :blacklisted_on, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :checked_at, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.datetime_select :checked_at, :class => 'text-field form-control' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :clicky_id %><br>
-    <%= f.text_field :clicky_id %>
-  </div>
-  <div class="field">
-    <%= f.label :ip %><br>
-    <%= f.text_field :ip %>
-  </div>
-  <div class="field">
-    <%= f.label :domain %><br>
-    <%= f.text_field :domain %>
-  </div>
-  <div class="field">
-    <%= f.label :status %><br>
-    <%= f.text_field :status %>
-  </div>
-  <div class="field">
-    <%= f.label :ping %><br>
-    <%= f.number_field :ping %>
-  </div>
-  <div class="field">
-    <%= f.label :blacklisted %><br>
-    <%= f.check_box :blacklisted %>
-  </div>
-  <div class="field">
-    <%= f.label :blacklisted_on %><br>
-    <%= f.datetime_select :blacklisted_on %>
-  </div>
-  <div class="field">
-    <%= f.label :checked_at %><br>
-    <%= f.datetime_select :checked_at %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  host_infos_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>
