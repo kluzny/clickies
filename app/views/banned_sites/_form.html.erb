@@ -1,0 +1,29 @@
+<%= form_for(@banned_site) do |f| %>
+  <% if @banned_site.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@banned_site.errors.count, "error") %> prohibited this banned_site from being saved:</h2>
+
+      <ul>
+      <% @banned_site.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :banned_on %><br>
+    <%= f.datetime_select :banned_on %>
+  </div>
+  <div class="field">
+    <%= f.label :domain %><br>
+    <%= f.text_field :domain %>
+  </div>
+  <div class="field">
+    <%= f.label :reason %><br>
+    <%= f.text_field :reason %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

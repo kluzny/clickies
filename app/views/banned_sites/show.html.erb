@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Banned on:</strong>
+  <%= @banned_site.banned_on %>
+</p>
+
+<p>
+  <strong>Domain:</strong>
+  <%= @banned_site.domain %>
+</p>
+
+<p>
+  <strong>Reason:</strong>
+  <%= @banned_site.reason %>
+</p>
+
+<%= link_to 'Edit', edit_banned_site_path(@banned_site) %> |
+<%= link_to 'Back', banned_sites_path %>
