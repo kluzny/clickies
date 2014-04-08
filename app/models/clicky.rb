@@ -4,4 +4,5 @@ class Clicky < ActiveRecord::Base
   belongs_to :banned_site
   has_one :host_info
   has_one :page_info
+  has_many :clickies
 end
