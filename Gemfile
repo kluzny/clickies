@@ -31,6 +31,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'debugger'
   gem 'factory_girl_rails'
+  gem 'rubocop'
 end
 
 group :development do
@@ -45,6 +46,7 @@ group :development do
   gem 'guard-rspec'
   gem 'guard-livereload'
   gem 'guard-brakeman'
+  gem 'guard-rubocop'
   gem 'rb-fsevent', require: false
 end
 
