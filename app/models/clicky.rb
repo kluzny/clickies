@@ -5,4 +5,5 @@ class Clicky < ActiveRecord::Base
   has_one :host_info
   has_one :page_info
   has_many :clickies
+  validates_formatting_of :url, using: :url
 end
