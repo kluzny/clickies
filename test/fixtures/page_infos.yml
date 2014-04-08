@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  clicky_id: 
+  title: MyString
+  nsfw: false
+
+two:
+  clicky_id: 
+  title: MyString
+  nsfw: false
