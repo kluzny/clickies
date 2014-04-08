@@ -1,24 +1,24 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Clicky -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Clicky %></h1>
+</div>
 
-<p>
-  <strong>Page info:</strong>
-  <%= @clicky.page_info %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:url) %></dt>
+      <dd><pre class="prettyprint"><%= @clicky.url %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Clicky:</strong>
-  <%= @clicky.clicky %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              clickies_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_clicky_path(@clicky), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              clicky_path(@clicky),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Url:</strong>
-  <%= @clicky.url %>
-</p>
-
-<p>
-  <strong>Banned site:</strong>
-  <%= @clicky.banned_site %>
-</p>
-
-<%= link_to 'Edit', edit_clicky_path(@clicky) %> |
-<%= link_to 'Back', clickies_path %>

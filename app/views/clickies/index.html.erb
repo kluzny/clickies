@@ -1,33 +1,36 @@
-<h1>Listing clickies</h1>
-
-<table>
+<%- model_class = Clicky -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Clicky %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Page info</th>
-      <th>Clicky</th>
-      <th>Url</th>
-      <th>Banned site</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:url) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @clickies.each do |clicky| %>
       <tr>
-        <td><%= clicky.page_info %></td>
-        <td><%= clicky.clicky %></td>
+        <td><%= clicky.id %></td>
         <td><%= clicky.url %></td>
-        <td><%= clicky.banned_site %></td>
-        <td><%= link_to 'Show', clicky %></td>
-        <td><%= link_to 'Edit', edit_clicky_path(clicky) %></td>
-        <td><%= link_to 'Destroy', clicky, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l clicky.created_at, format: :long %></td>
+        <td>
+          <%= link_to clicky_path(clicky), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to clicky_path(clicky), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Clicky', new_clicky_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_clicky_path,
+            :class => 'btn btn-primary' %>
