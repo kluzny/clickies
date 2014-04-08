@@ -20,6 +20,7 @@ gem 'omniauth-facebook'
 gem 'validates_formatting_of'
 gem 'carrierwave'
 gem 'fog'
+gem 'thin'
 
 group :doc do
   gem 'sdoc', require: false
