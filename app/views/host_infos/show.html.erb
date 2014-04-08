@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Clicky:</strong>
+  <%= @host_info.clicky %>
+</p>
+
+<p>
+  <strong>Ip:</strong>
+  <%= @host_info.ip %>
+</p>
+
+<p>
+  <strong>Domain:</strong>
+  <%= @host_info.domain %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @host_info.status %>
+</p>
+
+<p>
+  <strong>Ping:</strong>
+  <%= @host_info.ping %>
+</p>
+
+<p>
+  <strong>Blacklisted:</strong>
+  <%= @host_info.blacklisted %>
+</p>
+
+<p>
+  <strong>Blacklisted on:</strong>
+  <%= @host_info.blacklisted_on %>
+</p>
+
+<p>
+  <strong>Checked at:</strong>
+  <%= @host_info.checked_at %>
+</p>
+
+<%= link_to 'Edit', edit_host_info_path(@host_info) %> |
+<%= link_to 'Back', host_infos_path %>

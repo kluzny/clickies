@@ -1,4 +1,6 @@
 Clickies::Application.routes.draw do
+  resources :host_infos
+
   resources :page_infos
 
   resources :clickies

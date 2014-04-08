@@ -1,0 +1,41 @@
+<h1>Listing host_infos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Clicky</th>
+      <th>Ip</th>
+      <th>Domain</th>
+      <th>Status</th>
+      <th>Ping</th>
+      <th>Blacklisted</th>
+      <th>Blacklisted on</th>
+      <th>Checked at</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @host_infos.each do |host_info| %>
+      <tr>
+        <td><%= host_info.clicky %></td>
+        <td><%= host_info.ip %></td>
+        <td><%= host_info.domain %></td>
+        <td><%= host_info.status %></td>
+        <td><%= host_info.ping %></td>
+        <td><%= host_info.blacklisted %></td>
+        <td><%= host_info.blacklisted_on %></td>
+        <td><%= host_info.checked_at %></td>
+        <td><%= link_to 'Show', host_info %></td>
+        <td><%= link_to 'Edit', edit_host_info_path(host_info) %></td>
+        <td><%= link_to 'Destroy', host_info, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Host info', new_host_info_path %>

@@ -1,0 +1,49 @@
+<%= form_for(@host_info) do |f| %>
+  <% if @host_info.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@host_info.errors.count, "error") %> prohibited this host_info from being saved:</h2>
+
+      <ul>
+      <% @host_info.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :clicky_id %><br>
+    <%= f.text_field :clicky_id %>
+  </div>
+  <div class="field">
+    <%= f.label :ip %><br>
+    <%= f.text_field :ip %>
+  </div>
+  <div class="field">
+    <%= f.label :domain %><br>
+    <%= f.text_field :domain %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br>
+    <%= f.text_field :status %>
+  </div>
+  <div class="field">
+    <%= f.label :ping %><br>
+    <%= f.number_field :ping %>
+  </div>
+  <div class="field">
+    <%= f.label :blacklisted %><br>
+    <%= f.check_box :blacklisted %>
+  </div>
+  <div class="field">
+    <%= f.label :blacklisted_on %><br>
+    <%= f.datetime_select :blacklisted_on %>
+  </div>
+  <div class="field">
+    <%= f.label :checked_at %><br>
+    <%= f.datetime_select :checked_at %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
