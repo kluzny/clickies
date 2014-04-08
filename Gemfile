@@ -38,14 +38,12 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'rack-mini-profiler'
-  gem 'rails_best_practices'
   gem 'guard'
   gem 'guard-bundler'
   gem 'guard-rails'
   gem 'guard-rspec'
   gem 'guard-livereload'
   gem 'guard-brakeman'
-  gem 'guard-rails_best_practices'
   gem 'rb-fsevent', require: false
 end
 
