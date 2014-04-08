@@ -1,4 +1,5 @@
 Clickies::Application.routes.draw do
+  get "landings/index"
   resources :host_infos
 
   resources :page_infos
