@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20140408035421) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "banned_sites", force: true do |t|
     t.datetime "banned_on"
     t.string   "domain"
@@ -30,9 +33,9 @@ ActiveRecord::Schema.define(version: 20140408035421) do
     t.datetime "updated_at"
   end
 
-  add_index "clickies", ["banned_site_id"], name: "index_clickies_on_banned_site_id"
-  add_index "clickies", ["clicky_id"], name: "index_clickies_on_clicky_id"
-  add_index "clickies", ["page_info_id"], name: "index_clickies_on_page_info_id"
+  add_index "clickies", ["banned_site_id"], name: "index_clickies_on_banned_site_id", using: :btree
+  add_index "clickies", ["clicky_id"], name: "index_clickies_on_clicky_id", using: :btree
+  add_index "clickies", ["page_info_id"], name: "index_clickies_on_page_info_id", using: :btree
 
   create_table "delayed_jobs", force: true do |t|
     t.integer  "priority",   default: 0, null: false
@@ -48,7 +51,7 @@ ActiveRecord::Schema.define(version: 20140408035421) do
     t.datetime "updated_at"
   end
 
-  add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority"
+  add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
 
   create_table "host_infos", force: true do |t|
     t.integer  "clicky_id"
@@ -63,7 +66,7 @@ ActiveRecord::Schema.define(version: 20140408035421) do
     t.datetime "updated_at"
   end
 
-  add_index "host_infos", ["clicky_id"], name: "index_host_infos_on_clicky_id"
+  add_index "host_infos", ["clicky_id"], name: "index_host_infos_on_clicky_id", using: :btree
 
   create_table "page_infos", force: true do |t|
     t.integer  "clicky_id"
@@ -73,7 +76,7 @@ ActiveRecord::Schema.define(version: 20140408035421) do
     t.datetime "updated_at"
   end
 
-  add_index "page_infos", ["clicky_id"], name: "index_page_infos_on_clicky_id"
+  add_index "page_infos", ["clicky_id"], name: "index_page_infos_on_clicky_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -90,7 +93,7 @@ ActiveRecord::Schema.define(version: 20140408035421) do
     t.datetime "updated_at"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end
