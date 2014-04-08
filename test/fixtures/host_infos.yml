@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  clicky_id: 
+  ip: MyString
+  domain: MyString
+  status: MyString
+  ping: 1
+  blacklisted: false
+  blacklisted_on: 2014-04-08 03:54:21
+  checked_at: 2014-04-08 03:54:21
+
+two:
+  clicky_id: 
+  ip: MyString
+  domain: MyString
+  status: MyString
+  ping: 1
+  blacklisted: false
+  blacklisted_on: 2014-04-08 03:54:21
+  checked_at: 2014-04-08 03:54:21
